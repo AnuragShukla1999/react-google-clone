@@ -1,9 +1,20 @@
-import React from 'react';
-import "./App.css";
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import { Footer } from './components/footer';
+
 
 const App = () => {
+
+  const [darkTheme, setDarkTheme] = useState(false);
+
   return (
-    <h1>Google</h1>
+     <div className={darkTheme ? 'dark' : ''}>
+      <div className="dark:bg-gray-900 bg-gray-100 dark:text-gray-200 black min-h-screen">
+        <Navbar setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
+
+        <Footer/>
+      </div>
+     </div>
   )
 }
 
